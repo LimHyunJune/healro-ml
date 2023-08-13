@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-# from transformers import pipeline
+from transformers import pipeline
 from ml.load import Model
 import requests
 
@@ -7,8 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def predict():
-    # return model.predict_deberta_large_mnli("I hate proxy server.")
-    return "Hello"
+    return model.predict_deberta_large_mnli("I hate proxy server.")
 
 
 if __name__ == "__main__":
