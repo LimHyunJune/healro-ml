@@ -10,19 +10,10 @@ class RequestHandler(SimpleXMLRPCRequestHandler):
 class Model:
     def __init__(self):
         self.bart_large_mnli = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
-        self.roberta_large_mnli = pipeline('zero-shot-classification', model='roberta-large-mnli')
-        self.deberta_large_mnli = pipeline('zero-shot-classification',
-                                           model="MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli")
         self.label = ["port", "server", "web"]
 
     def predict_bart_large_mnli(self, sentence):
         return self.bart_large_mnli(sentence, self.label, multi_label=True)
-
-    def predict_roberta_large_mnli(self, sentence):
-        return self.roberta_large_mnli(sentence, self.label, multi_label=True)
-
-    def predict_deberta_large_mnli(self, sentence):
-        return self.deberta_large_mnli(sentence, self.label, multi_label=True)
 
 
 if __name__ == "__main__":
