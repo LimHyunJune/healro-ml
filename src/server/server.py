@@ -1,16 +1,14 @@
 from flask import Flask, render_template
 from transformers import pipeline
-from rb.model_ensemble import ModelEnsemble
 from ml.load import Model
 import requests
 
 app = Flask(__name__)
-me = ModelEnsemble()
-
 
 @app.route("/")
 def predict():
-    return model.predict_deberta_large_mnli("I hate proxy server.")
+    # return model.predict_deberta_large_mnli("I hate proxy server.")
+    return "Hello"
 
 
 if __name__ == "__main__":
