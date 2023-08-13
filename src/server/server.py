@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def predict():
-    return model.predict_deberta_large_mnli("I hate proxy server.")
+    return model.predict_bart_large_mnli("I hate proxy server.")
 
 
 if __name__ == "__main__":
