@@ -10,8 +10,7 @@ me = ModelEnsemble()
 
 @app.route("/")
 def predict():
-    print(model.predict_deberta_large_mnli("I hate proxy server."))
-    return "success"
+    return model.predict_deberta_large_mnli("I hate proxy server.")
 
 
 if __name__ == "__main__":
